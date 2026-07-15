@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005334961470",
+    "project_id": "mynote-nueltech-flutter",
+    "storage_bucket": "mynote-nueltech-flutter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005334961470:android:58959437ec2f8a3c97e06f",
+        "android_client_info": {
+          "package_name": "dev.nueltech.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8ThnsQE7twE7xg59THElJdY17u5E22wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
