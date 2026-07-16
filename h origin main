@@ -1,0 +1,44 @@
+[33mcommit d4f2718db2223a4caf0ac51df192f54a285bb177[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Emmanuel <akuwudikeemmanuel03@gmail.com>
+Date:   Thu Jul 16 22:34:26 2026 +0100
+
+    Updates
+
+[33mcommit 8d8c5fef2c3dd613f23c894cf3ec864e60c0f69f[m
+Author: Emmanuel <akuwudikeemmanuel03@gmail.com>
+Date:   Thu Jul 16 22:32:06 2026 +0100
+
+    Updates
+
+[33mcommit 595118c00585037631dafdb2a50737f09bb80723[m
+Author: Emmanuel <akuwudikeemmanuel03@gmail.com>
+Date:   Thu Jul 16 20:00:31 2026 +0100
+
+    Updates
+
+[33mcommit ad4c38d9815555d6b51b473cda0c51ec4bea9cee[m
+Merge: cc3062f 9cc39ec
+Author: Emmanuel <akuwudikeemmanuel03@gmail.com>
+Date:   Thu Jul 16 18:26:18 2026 +0100
+
+    Updates
+
+[33mcommit cc3062f73a0edba42a6a96521ed99556b48ccc8b[m
+Author: Emmanuel <akuwudikeemmanuel03@gmail.com>
+Date:   Thu Jul 16 18:25:07 2026 +0100
+
+    updates
+
+[33mcommit 9cc39ec9b2287b058e08a25e5b2adfc1b9326762[m
+Author: Emmanuel Chikezie <akuwudikeemmanuel03@gmail.com>
+Date:   Wed Jul 15 10:36:37 2026 +0100
+
+    Remove 'Getting Started' section from README
+    
+    Removed the 'Getting Started' section and related resources from the README.
+
+[33mcommit 65de502501d7f701d893bef3691ff921e8b9e8c0[m
+Author: Emmanuel <akuwudikeemmanuel03@gmail.com>
+Date:   Wed Jul 15 10:29:22 2026 +0100
+
+    Initial commit
