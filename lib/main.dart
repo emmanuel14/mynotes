@@ -70,10 +70,10 @@ class _NotesViewState extends State<NotesView> {
       appBar: AppBar(
         title: const Text('Main UI'),
         actions: [
-          PopupMenuButton<MenuAction>(onSelected: (itemBuilder){
-
-            }, itemBuilder: (context){
-              return[
+          PopupMenuButton<MenuAction>
+          (onSelected: (value){},
+          itemBuilder: (context){
+              return const[
                 PopupMenuItem<MenuAction>(
                 value: MenuAction.logout,
                 child: Text('Log out'),
