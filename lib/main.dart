@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
                 return const NotesView();
               } else {
                 return const VerifyEmailView();
+                
               }
             } else {
               return const LoginView();
@@ -52,6 +53,8 @@ class HomePage extends StatelessWidget {
       );
   }
 }
+
+enum MenuAction{logout}
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
@@ -66,6 +69,19 @@ class _NotesViewState extends State<NotesView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Main UI'),
+        actions: [
+          PopupMenuButton<MenuAction>(onSelected: (itemBuilder){
+
+            }, itemBuilder: (context){
+              return[
+                PopupMenuItem<MenuAction>(
+                value: MenuAction.logout,
+                child: Text('Log out'),
+                ),
+              ]; 
+            },  
+          )
+        ],
       ),
       body: const Text('Hello World'),
     );
