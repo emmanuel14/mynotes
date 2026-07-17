@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:mynotes/firebase_options.dart';
 import 'package:mynotes/views/login_view.dart';
 import 'package:mynotes/views/register_view.dart';
 import 'package:mynotes/views/verify_email_view.dart';
+import 'dart:developer' as devtools show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,7 +74,9 @@ class _NotesViewState extends State<NotesView> {
         title: const Text('Main UI'),
         actions: [
           PopupMenuButton<MenuAction>
-          (onSelected: (value){},
+          (onSelected: (value){
+            devtools.log(value.toString());
+          },
           itemBuilder: (context){
               return const[
                 PopupMenuItem<MenuAction>(
@@ -86,4 +91,16 @@ class _NotesViewState extends State<NotesView> {
       body: const Text('Hello World'),
     );
   }
+}
+
+Future<bool> showLogOutDialog(BuildContext context){
+  showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title:const Text('Sign Out'),
+        
+        );
+      }
+    );
 }
