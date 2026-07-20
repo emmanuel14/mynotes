@@ -72,7 +72,6 @@ class _LoginViewState extends State<LoginView> {
                     print(e.code);
                   }
                 }
-                 
                 
               },
             child : const Text('Login'),
