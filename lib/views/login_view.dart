@@ -66,6 +66,19 @@ class _LoginViewState extends State<LoginView> {
                 email: email, 
                 password: password,
                 );
+                final user = FirebaseAuth.instance.currentUser;
+                if (user?.emailVerified??false){
+                  //user's email is verified 
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    notesRoute, 
+                      (route) => false);
+
+                }else{
+                  // user's email is Not Verified
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    verifyEmailRoute, 
+                      (route) => false);
+                }
                   Navigator.of(context).pushNamedAndRemoveUntil(
                     notesRoute, 
                       (route) => false);   
@@ -89,8 +102,7 @@ class _LoginViewState extends State<LoginView> {
                       context,
                       e.toString(),
                   );
-            }
-                
+            }         
               },
             child : const Text('Login'),
             ),
