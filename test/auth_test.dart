@@ -66,7 +66,7 @@ void main(){
 
   test('Logged in user should be able to sign ', () async {
     await provider.logOut();
-    await provider.logIn(
+    await provider.login(
       email: 'email',
       password: 'password',
       );
@@ -92,7 +92,7 @@ bool get isInitialized => _isInitialized;
     }) async{
       if (!isInitialized) throw NotInitializedException();
      await  Future.delayed(const Duration(seconds: 1));
-     return logIn(
+     return login(
      email: email, 
      password: password,
      );
@@ -116,7 +116,7 @@ bool get isInitialized => _isInitialized;
   }
 
   @override
-  Future<AuthUser> logIn({
+  Future<AuthUser> login({
     required String email,
     required String password,
     }) {
