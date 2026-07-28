@@ -43,7 +43,7 @@ class NotesServices {
       throw UnableToGetDocumentsDirectoryException();
     }
   }
-}d
+}
 
 @immutable
 class DataBaseUser{
