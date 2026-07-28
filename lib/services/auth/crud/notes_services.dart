@@ -42,7 +42,7 @@ class NotesServices {
     } on MissingPlatformDirectoryException{
       throw UnableToGetDocumentsDirectoryException();
     }
-  }e
+  }
 }
 
 @immutable
