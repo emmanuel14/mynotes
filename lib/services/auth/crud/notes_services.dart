@@ -9,15 +9,22 @@ import 'package:path/path.dart' show join;
 
 
 
-class NotesServices {
+class NotesService {
   Database? _db;
 
   List<DatabaseNote> _notes = [];
 
+  static final NotesService _shared = NotesService._sharedInstance();
+  NotesService._sharedInstance();
+  factory NotesService() => _shared;
+
   final  _notesStreamController = 
     StreamController<List<DatabaseNote>>.broadcast();
 
+    Stream<List<DatabaseNote>> get allNotes => _notesStreamController.stream;
+
    Future<DataBaseUser> getOrCreateUser({required String email, bool setAsCurrentUser = true}) async {
+    await _ensureDbIsOpen();
     try{
       final user = await getUser(email: email);
       return user;
@@ -36,7 +43,10 @@ class NotesServices {
    } 
 
   Future<DatabaseNote> updateNote(
-    {required DatabaseNote note, required String text}) async {
+    {required DatabaseNote note,
+    required String text,
+    }) async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
     // make sure note exists
     await getNote(id: note.id);
@@ -62,12 +72,14 @@ class NotesServices {
   }
 
   Future<Iterable<DatabaseNote>> getAllNotes() async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
     final notes = await db.query(notesTable);
     return notes.map((noteRow) => DatabaseNote.fromRow(noteRow));
   }
 
   Future<DatabaseNote>getNote({required int id}) async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
     final notes = await db.query(
       notesTable,
@@ -87,6 +99,7 @@ class NotesServices {
   } 
 
   Future<int> deleteAllNotes() async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
     final numberOfDeletions = await db.delete(notesTable);
     _notes = [];
@@ -95,6 +108,7 @@ class NotesServices {
   }
 
   Future<void> deleteNote({required int id}) async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
     final deletedCount = await db.delete(
       notesTable, 
@@ -138,6 +152,7 @@ class NotesServices {
   }
 
   Future<DataBaseUser> getUser({required String email}) async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
       final results =await db.query(
       userTable, 
@@ -155,6 +170,7 @@ class NotesServices {
   }
 
   Future<DataBaseUser> createUser ({required String email}) async {
+    await _ensureDbIsOpen();
     final db = _getDatabaseOrThrow();
     final results =await db.query(
     userTable, 
@@ -225,7 +241,17 @@ class NotesServices {
       throw UnableToGetDocumentsDirectoryException();
     }
   }
+
+  Future<void> _ensureDbIsOpen() async {
+  try{
+    await open();
+  } on DatabaseAlreadyOpenException{
+    // empty
+  }
 }
+
+}
+
 
 @immutable
 class DataBaseUser{
