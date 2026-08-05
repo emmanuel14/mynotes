@@ -25,12 +25,17 @@ class _NewNoteViewState extends State<NewNoteView> {
     final email = currentUser.email!;
     final owner = await _notesService.getOrCreateUser(email: email);
     final newNote = await _notesService.createNote(owner: owner);
+
     _note = newNote;
     return newNote;
-
-
   }
 
+  void _deleteNoteIfTextIsEmpty() {
+    final note = _note;
+    if (_textEditingController.text.isEmpty && note != null) {
+      _notesService.deleteNote(id: note.id);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
