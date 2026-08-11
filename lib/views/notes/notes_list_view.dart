@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mynotes/services/auth/crud/notes_services.dart';
 import 'package:mynotes/utilities/dialogs/delete_dialog.dart';
-import 'package:sqflite/sqflite.dart';
+
 
 typedef NoteCallback = void Function(DatabaseNote note);
 
