@@ -1,14 +1,20 @@
 
 import 'package:flutter/foundation.dart' show immutable;
 import 'package:mynotes/services/auth/auth_user.dart';
+import 'package:equatable/equatable.dart';
 
 @immutable
 abstract class AuthState{
   const AuthState();
 }
 
-class AuthStateLoading extends AuthState{
-  const AuthStateLoading();
+class AuthStateUninitialized extends AuthState{
+  const AuthStateUninitialized();
+}
+
+class AuthStateRegistering extends AuthState{
+  final Exception? exception;
+  const AuthStateRegistering(this.exception);
 }
 
 class AuthStateLoggedIn extends AuthState{
@@ -22,10 +28,10 @@ class AuthStateNeedsVerification extends AuthState{
 
 class AuthStateLoggedOut extends AuthState{
   final Exception? exception;
-  const AuthStateLoggedOut(this.exception);
+  final bool isLoading;
+  const AuthStateLoggedOut({
+    required this.exception, 
+    required this.isLoading,
+});
 }
 
-class AuthStateLogoutFailure extends AuthState{
-  final Exception exception;
-  const AuthStateLogoutFailure(this.exception);
-}
