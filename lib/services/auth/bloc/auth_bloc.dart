@@ -68,17 +68,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState>{
 
           emit(AuthStateLoggedIn(user));
       } on Exception catch (e){
-        emit(AuthStateLoggedOut(e));
-      }
-    });
-    // logout
-    on<AuthEventLogOut> ((event, emit) async{
-      try{
         emit(AuthStateLoggedOut(
           exception: e, 
           isLoading: false,
           ),
         );
+      }
+    });
+    // logout
+    on<AuthEventLogOut> ((event, emit) async{
+      try{
+        emit(const AuthStateLoading());
         await provider.logOut();
         emit(const AuthStateLoggedOut(null));
       } on Exception catch (e){
