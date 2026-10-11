@@ -14,7 +14,7 @@ CloseDialog showLoadingDialog({
         const SizedBox(height: 10.0,),
         Text(text),
       ]
-    ),
+    ),x
   );
 
   showDialog(
