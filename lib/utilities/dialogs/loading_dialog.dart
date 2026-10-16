@@ -20,7 +20,7 @@ CloseDialog showLoadingDialog({
   showDialog(
     context: context,
     barrierDismissible: false,
-    builder: (context) => dialog,
+    builder: (context) => dialog,c
     );
 
     return () => Navigator.of(context).pop();
