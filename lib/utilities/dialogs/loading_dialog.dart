@@ -8,7 +8,7 @@ CloseDialog showLoadingDialog({
       }) {
   final dialog = AlertDialog(
     content: Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min,x
       children:[
         const CircularProgressIndicator(),
         const SizedBox(height: 10.0,),
