@@ -17,7 +17,7 @@ CloseDialog showLoadingDialog({
     ),
   );
 
-  showDialog(x
+  showDialog(
     context: context,
     barrierDismissible: false,
     builder: (context) => dialog,
