@@ -11,6 +11,6 @@ Future<void> showErrorDialog(
     content: text, 
     optionsBuilder: () =>{
       'OK' : Null,
-    }s
+    }
   );
 }
