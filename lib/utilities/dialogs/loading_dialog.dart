@@ -23,5 +23,5 @@ CloseDialog showLoadingDialog({
     builder: (context) => dialog,
     );
 
-    return () => sNavigator.of(context).pop();
+    return () => Navigator.of(context).pop();
 }
