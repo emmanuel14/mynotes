@@ -16,7 +16,7 @@ CloseDialog showLoadingDialog({
       ]
     ),
   );
-w
+
   showDialog(
     context: context,
     barrierDismissible: false,
