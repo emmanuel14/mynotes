@@ -10,7 +10,7 @@ Future<bool> showDeleteDialog(BuildContext context){
       'Cancel': false,
       'Yes': true,
     },
-  ).then(d
+  ).then(
     (value) => value ?? false,
   );
 }
