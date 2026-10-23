@@ -29,7 +29,7 @@ Future<T?> showGenericDialog<T>({
           );
         }).toList(),
       );
-    }xx
+    }
   );
 }
   
