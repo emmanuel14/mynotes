@@ -1,1 +1,1 @@
-enum MenuAction{logout}d
+enum MenuAction{logout}
