@@ -11,7 +11,7 @@ CloseDialog showLoadingDialog({
       mainAxisSize: MainAxisSize.min,
       children:[
         const CircularProgressIndicator(),
-        const SizedBox(height: 10.0,)S,
+        const SizedBox(height: 10.0,),
         Text(text),
       ]
     ),
