@@ -10,7 +10,7 @@ Future<bool> showLogOutDialog(BuildContext context){
       'Cancel': false,
       'Log out': true,
     },
-  ).then(
+  ).then(d
     (value) => value ?? false,
   );
 }
