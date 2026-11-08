@@ -78,7 +78,7 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCYGWPFzgptOYilaug8tHpFhe3afuZmgFA',
     appId: '1:554490466079:web:ff8b83b15ec78f973d2a2a',
     messagingSenderId: '554490466079',
-    projectId: 'mynotes-nuel',s
+    projectId: 'mynotes-nuel',
     authDomain: 'mynotes-nuel.firebaseapp.com',
     storageBucket: 'mynotes-nuel.firebasestorage.app',
     measurementId: 'G-337WVFGTX2',
