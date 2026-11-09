@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
       } else if (state is AuthStateRegistering){
         return const RegisterView(); 
       } else {
-        return const Scaffold(
+        return const Scaffold(ff
           body: CircularProgressIndicator(),
         );
       }
